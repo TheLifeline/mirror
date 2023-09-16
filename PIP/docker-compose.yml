@@ -1,0 +1,19 @@
+version: '3'
+services:
+    bandersnatch:
+        volumes:
+            - './pypi:/srv/pypi'
+            - './bandersnatch.conf:/etc/bandersnatch.conf'
+            - './requirements:/requirements'
+        image: 'pypa/bandersnatch:latest'
+        command: "bandersnatch mirror"
+    # nginx:
+    #     image: nginx:1.24
+    #     ports:
+    #         - "8080:80"
+    #     links:
+    #         - bandersnatch
+    #     volumes:
+    #         - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    #         - ./pypi:/data:ro
+    #     restart: always
