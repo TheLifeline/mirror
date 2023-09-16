@@ -1,0 +1,39 @@
+############# config ##################
+#
+set base_path    /var/spool/apt-mirror
+#
+# set mirror_path  $base_path/mirror
+# set skel_path    $base_path/skel
+# set var_path     $base_path/var
+ set cleanscript  /var/spool/apt-mirror/var/clean.sh
+# set defaultarch  <running host architecture>
+ set postmirror_script /var/spool/apt-mirror/var/postmirror.sh
+# set run_postmirror 0
+set nthreads   25
+set _tilde 0
+#set limit_rate 100k   ## Per thread ##
+#
+############# end config ##############
+
+
+#Kali Rolling
+deb http://http.kali.org/kali kali-rolling main non-free contrib
+
+#Ubuntu Focal (20.04)
+deb         http://mirrors.tuna.tsinghua.edu.cn/ubuntu     focal              main restricted universe multiverse
+deb         http://mirrors.tuna.tsinghua.edu.cn/ubuntu     focal-updates      main restricted universe multiverse
+deb         http://mirrors.tuna.tsinghua.edu.cn/ubuntu     focal-backports    main restricted universe multiverse
+deb         http://mirrors.tuna.tsinghua.edu.cn/ubuntu     focal-security     main restricted universe multiverse
+deb-i386    http://mirrors.tuna.tsinghua.edu.cn/ubuntu     focal              main restricted universe multiverse
+deb-i386    http://mirrors.tuna.tsinghua.edu.cn/ubuntu     focal-updates      main restricted universe multiverse
+deb-i386    http://mirrors.tuna.tsinghua.edu.cn/ubuntu     focal-backports    main restricted universe multiverse
+deb-i386    http://mirrors.tuna.tsinghua.edu.cn/ubuntu     focal-security     main restricted universe multiverse
+deb-amd64   http://mirrors.tuna.tsinghua.edu.cn/ubuntu     focal              main restricted universe multiverse
+deb-amd64   http://mirrors.tuna.tsinghua.edu.cn/ubuntu     focal-updates      main restricted universe multiverse
+deb-amd64   http://mirrors.tuna.tsinghua.edu.cn/ubuntu     focal-backports    main restricted universe multiverse
+deb-amd64   http://mirrors.tuna.tsinghua.edu.cn/ubuntu     focal-security     main restricted universe multiverse
+
+
+clean http://http.kali.org/kali 
+clean http://mirrors.tuna.tsinghua.edu.cn/ubuntu
+clean http://security.ubuntu.com/ubuntu

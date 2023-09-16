@@ -1,0 +1,9 @@
+version: '3'
+services:
+    apt-mirror-http-server:
+        volumes:
+            - './data:/var/spool/apt-mirror'
+            - './mirror.list:/etc/apt/mirror.list'
+        ports:
+            - '8081:80'
+        image: seterrychen/apt-mirror-http-server
